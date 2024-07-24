@@ -1,4 +1,4 @@
-const PHISING_OFF_HEADERS = [
+const PHISHING_OFF_HEADERS = [
   "X-PHISHTEST"
 ]
 
@@ -10,7 +10,7 @@ function phishOff() {
     Logger.log("Thread " + thread.getFirstMessageSubject());
     let message = thread.getMessages()[0];
 
-    let phishOff = PHISING_OFF_HEADERS
+    let phishOff = PHISHING_OFF_HEADERS
       .map(headerName => message.getHeader(headerName))
       .some(x => x);
 
