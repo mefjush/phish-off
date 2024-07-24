@@ -1,5 +1,5 @@
 # phish-off
-Google Apps Script to automatically filter-out phishing-off emails from Phished.io from your Gmail inbox.
+Google Apps Script to automatically filter-out phishing-off emails by Phished.io from your Gmail inbox.
 
 It automatically adds a `phish-off` label and archives all the phising-off emails.
 
