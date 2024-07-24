@@ -9,7 +9,7 @@ function phishOff() {
   for (let thread of threads) {
     Logger.log("Thread " + thread.getFirstMessageSubject());
     let message = thread.getMessages()[0];
-    
+
     let phishOff = PHISING_OFF_HEADERS
       .map(headerName => message.getHeader(headerName))
       .some(x => x);
@@ -25,7 +25,7 @@ function phishOff() {
  *  @param {GmailApp.GmailThread} thread 
  */
 function label(thread) {
-  let label = GmailApp.getUserLabelByName(PHISH_OFF_LABEL);
+  let label = GmailApp.getUserLabelByName(PHISH_OFF_LABEL) || GmailApp.createLabel(PHISH_OFF_LABEL);
   thread.addLabel(label);
   thread.moveToArchive();
 }
