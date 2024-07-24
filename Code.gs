@@ -7,7 +7,7 @@ const PHISH_OFF_LABEL = "phish-off";
 function phishOff() {
   let threads = GmailApp.search("newer_than:5h label:unread in:inbox");
   for (let thread of threads) {
-    Logger.log("Thread " + thread.getFirstMessageSubject());
+    Logger.log("Thread: " + thread.getFirstMessageSubject());
     let message = thread.getMessages()[0];
 
     let phishOff = PHISHING_OFF_HEADERS
